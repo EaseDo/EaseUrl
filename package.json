@@ -1,0 +1,47 @@
+{
+  "name": "ease-url",
+  "version": "0.1.2",
+  "description": "Wow, such a ease url parser",
+  "main": "dist/EaseUrl.js",
+  "scripts": {
+    "start": "npx webpack-dev-server --config webpack.config.js",
+    "build": "webpack --config webpack.config.js --env.mode=production",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EaseDo/EaseUrl.git"
+  },
+  "keywords": [
+    "node",
+    "url",
+    "urls",
+    "url-parsing",
+    "ease-url"
+  ],
+  "author": "EaseDo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EaseDo/EaseUrl/issues"
+  },
+  "homepage": "https://github.com/EaseDo/EaseUrl#readme",
+  "devDependencies": {
+    "copy-webpack-plugin": "^6.2.1",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
+    "source-map-loader": "^0.2.4",
+    "terser-webpack-plugin": "^4.1.0",
+    "ts-loader": "^8.0.12",
+    "typescript": "^3.7.4",
+    "webpack": "^4.41.5",
+    "webpack-bundle-size-analyzer": "^3.1.0",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "dependencies": {
+    "@types/jest": "^26.0.19",
+    "jest": "^26.6.3",
+    "ts-jest": "^26.4.4"
+  }
+}
