@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "description": "Wow, such a ease url parser",
   "main": "dist/EaseUrl.js",
-  "types": "EaseUrl.d.ts"
+  "types": "EaseUrl.d.ts",
   "scripts": {
     "build": "webpack --config webpack.config.js --env.mode=production",
     "test": "jest"
