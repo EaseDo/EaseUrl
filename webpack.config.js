@@ -1,8 +1,7 @@
 
 
 var path = require('path'),
-    HtmlPlugin = require('html-webpack-plugin'),
-    TerserPlugin = require('terser-webpack-plugin');
+CopyPlugin = require("copy-webpack-plugin")
 
 module.exports = env => {
 
@@ -35,7 +34,14 @@ module.exports = env => {
                 }
             ]
         },
-        devtool: prod ? '' : 'source-map',
+        plugins: [
+            new CopyPlugin({
+              patterns: [
+                { from: "src/parse.d.ts", to: "EaseUrl.d.ts" },
+              ],
+            }),
+        ],
+        devtool: 'source-map',
         mode: mode
     }
 };
