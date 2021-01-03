@@ -14,7 +14,7 @@ export enum HashPos {
 
 export class EaseUrl {
 
-    static parse(url?: string | Url)
+    static parse(url?: string | Url) : EaseUrl
 
     public path: string
     public host: string
@@ -23,7 +23,7 @@ export class EaseUrl {
     public query: Query
 
     public set port(v: number)
-    public get port()
+    public get port() : number
     public get origin() : string
     public get url() : string
 

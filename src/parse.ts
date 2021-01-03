@@ -75,11 +75,14 @@ export class EaseUrl {
 
             find = find[0].match(/(([a-z]+):\/\/)?([0-9a-z\.\-]+)(:([0-9]{2,7}))?(\/.*)?(#.*?)?/i)
             
-            this.scheme = find[2] ?? 'https'
-            this.host = find[3]
-            this.path = find[6] ?? '/'
-
-            this._port = Number(find[5]) || undefined
+            if (find) {
+                this.scheme = find[2] ?? 'https'
+                this.host = find[3]
+                this.path = find[6] ?? '/'
+    
+                this._port = Number(find[5]) || undefined
+            }
+            
 
             if (parsed.length > 1) {
                 
@@ -89,7 +92,7 @@ export class EaseUrl {
                     this._hashPos = HashPos.AFTER
                     this.hash = '#' + find[1]
                 }
-
+                
                 this.query.parse(find[0])
             }
 
@@ -140,7 +143,7 @@ export class Query {
         }
         else if (queryType == String) {
             (query as string).split('&').forEach((item) => {
-                const param = item.match(/([a-z\.\-\_]+)=(.*)/i)
+                const param = item.match(/([0-9a-z\.\-\_]+)=(.*)/i)
                 if (param) {
                     this.params.push({key: param[1], value: param[2]})
                 }

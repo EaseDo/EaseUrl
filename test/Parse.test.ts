@@ -34,7 +34,7 @@ test('EaseUrl instance test', () => {
 
     ease.hash = url.hash
     expect(ease.url).toBe(`${url.scheme}://${url.host}${url.path}?key=value${url.hash}`)
-    console.log(ease)
+
     ease = EaseUrl.parse(`${url.scheme}://${url.host}${url.path}?key=value${url.hash}`)
     expect(ease.url).toBe(`${url.scheme}://${url.host}${url.path}?key=value${url.hash}`)
 
@@ -58,5 +58,5 @@ test('EaseUrl instance test', () => {
     
     ease = EaseUrl.parse(url)
     expect(ease.url).toBe(`${url.scheme}://${url.host}:${url.port}${url.path}?key=value${url.hash}`)
-
+    
 });
